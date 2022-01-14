@@ -32,7 +32,12 @@ export default {
   methods: {
     submitForm() {
       console.log('object');
-      registerUser();
+      const userData = {
+        username: this.username,
+        password: this.password,
+        nicename: this.nicename,
+      };
+      registerUser(userData);
     },
   },
 };
