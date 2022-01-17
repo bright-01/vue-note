@@ -14,7 +14,8 @@
       <input id="nickname" type="text" v-model="nickname" />
     </div>
     <!--    button type 이 submit일 경우 이벤트 버블링으로 인해 form tag의 v-on:submit 이벤트를 타게 된다.-->
-    <button type="submit">login</button>
+    <button type="submit">회원가입</button>
+    <p>{{ logMessage }}</p>
   </form>
 </template>
 
@@ -27,17 +28,26 @@ export default {
       username: '',
       password: '',
       nickname: '',
+      logMessage: '',
     };
   },
   methods: {
-    submitForm() {
+    async submitForm() {
       console.log('object');
       const userData = {
         username: this.username,
         password: this.password,
-        nicename: this.nicename,
+        nickname: this.nickname,
       };
-      registerUser(userData);
+      const { data } = await registerUser(userData);
+      console.log(data);
+      this.logMessage = `${data.username}님이 가입되었습니다.`;
+      this.initForm();
+    },
+    initForm() {
+      this.username = null;
+      this.password = null;
+      this.nickname = null;
     },
   },
 };
