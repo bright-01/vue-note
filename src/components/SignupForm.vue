@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { registerUser } from '@/api/index';
+import { registerUser } from '@/api/registerApi';
 export default {
   name: 'SignupForm',
   data() {
