@@ -1,11 +1,11 @@
 <template>
-  <div>404</div>
+  <div>
+    Page is not found
+  </div>
 </template>
 
 <script>
-export default {
-  name: 'NotFoundPage',
-};
+export default {};
 </script>
 
-<style scoped></style>
+<style></style>
