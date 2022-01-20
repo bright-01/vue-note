@@ -6,17 +6,38 @@
       </router-link>
     </div>
     <div className="navigations">
-      <router-link to="/login">로그인</router-link>
-      <router-link to="/signup">회원가입</router-link>
+      <template v-if="isLogin">
+        <span class="username">{{ this.$store.state.username }}</span>
+        <a href="javascript:;" @click="logoutUser">LOGOUT</a>
+      </template>
+      <template v-else>
+        <router-link to="/login">로그인</router-link>
+        <router-link to="/signup">회원가입</router-link>
+      </template>
     </div>
   </header>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    isLogin() {
+      return this.$store.getters.isLogin;
+    },
+  },
+  methods: {
+    logoutUser() {
+      this.$store.commit('clearUsername');
+      this.$router.push('/login');
+    },
+  },
+};
 </script>
 
 <style scoped>
+.username {
+  color: white;
+}
 header {
   display: flex;
   justify-content: space-between;
