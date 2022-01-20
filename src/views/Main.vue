@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1>MAIN</h1>
+    <div class="main list-container contents">
+      <h1 class="page-header">Today I Learned</h1>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'Main',
-};
+export default {};
 </script>
 
-<style scoped></style>
+<style></style>
