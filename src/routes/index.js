@@ -21,7 +21,7 @@ export default new VueRouter({
     },
     {
       path: '/main',
-      component: () => import('@/views/Main'),
+      component: () => import('@/views/MainPage'),
     },
     {
       path: '*',
