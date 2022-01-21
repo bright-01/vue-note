@@ -4,4 +4,9 @@ function fetchPosts() {
   return instance.get('posts');
 }
 
-export { fetchPosts };
+function createPost(postData) {
+  console.log('postData : ', postData);
+  return instance.post('posts', postData);
+}
+
+export { fetchPosts, createPost };

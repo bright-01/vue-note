@@ -9,6 +9,9 @@
           :key="postItem._id"
           :postItem="postItem"
         ></postListItem>
+        <router-link to="/add" class="create-button">
+          <i class="ion-md-add"></i>
+        </router-link>
       </ul>
     </div>
   </div>
