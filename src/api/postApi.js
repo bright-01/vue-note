@@ -1,12 +1,12 @@
-import { instance } from '@/api/index';
+import { posts } from '@/api/index';
 
 function fetchPosts() {
-  return instance.get('posts');
+  return posts.get('/');
 }
 
 function createPost(postData) {
   console.log('postData : ', postData);
-  return instance.post('posts', postData);
+  return posts.post('/', postData);
 }
 
 export { fetchPosts, createPost };
