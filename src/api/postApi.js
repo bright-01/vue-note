@@ -5,8 +5,11 @@ function fetchPosts() {
 }
 
 function createPost(postData) {
-  console.log('postData : ', postData);
   return posts.post('/', postData);
 }
 
-export { fetchPosts, createPost };
+function deletePost(postId) {
+  return posts.delete(postId);
+}
+
+export { fetchPosts, createPost, deletePost };
